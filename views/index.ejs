@@ -1,0 +1,27 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+    <title>Covid-19 Dashboard</title>
+</head>
+<body onload="startTime()">
+    <%- include('menu') -%>
+
+    <div class="dashboard-container">
+        <div class="info-container">
+            <h1 class="info-header"></h1>
+            <h1 class="info-header">the Philippines has:</h1>
+        </div>
+        <canvas id="myChart"></canvas>
+    </div>
+    
+    <script>
+        let timeSeries = '<%=timeSeries%>';
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <script type="text/javascript" src="/js/date.js"></script>
+    <script type="text/javascript" src="/js/index.js"></script>
+</body>
+</html>
