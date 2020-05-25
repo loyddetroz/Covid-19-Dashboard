@@ -16,8 +16,7 @@ var chart = new Chart(ctx, {
         labels: xLabels,
         datasets: [{
             label: 'My First dataset',
-            // backgroundColor: 'rgb(255, 99, 132)',
-            borderColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(107, 127, 215)',
             data: yLabels
         }]
     },

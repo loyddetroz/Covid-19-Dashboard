@@ -14,9 +14,17 @@
             <h1 class="info-header"></i></h1>
             <h1 class="info-header">the Philippines has:</i></h1>
             <br>
-            <h1 class="confirmed-count"><%=confirmedCasesCount%><span class="info-header"> confirmed cases.</span></h1>
+            <h1 class="stat"><%=confirmedCasesCount%><span class="info-header"> confirmed cases.</span></h1>
+            <h1 class="stat"><%=deathCount%><span class="info-header"> deaths.</span></h1>
+            <h1 class="stat"><%=recoveryCount%><span class="info-header"> deaths.</span></h1>
         </div>
-        <div style="width: 500px"><canvas id="myChart"></canvas></div>
+        <div class="info-container2">
+
+        </div>
+        <div class="graph-container">
+            <canvas class="chart" id="myChart"></canvas>
+        </div>
+        
         
     </div>
     

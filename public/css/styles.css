@@ -54,6 +54,10 @@ body {
     color: black;
 }
 
+.nav a:active {
+    color: yellow;
+}
+
 .dashboard-container {
     margin-left: 200px;
     position: fixed;
@@ -85,7 +89,36 @@ body {
     font-size: 30px;
 }
 
-.confirmed-count {
+.stat {
     color: #FDCA40;
     font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.info-container2 {
+    margin-top: 60px;
+    width: 550;
+    height: 400;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 60px;
+    padding: 40px;
+    box-shadow: 5px 0px 20px gray;
+    color: white;
+}
+
+.graph-container {
+    margin: 0 60px;
+    width: 800;
+    height: 400;
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 60px;
+    padding: 40px;
+    box-shadow: 5px 0px 20px gray;
+    color: white;
+}
+
+.chart {
+    margin: 0 auto;
 }

@@ -11,7 +11,7 @@ app.use(express.static(__dirname + "/public"));
 
 var timeSeries = '';
 
-const query = 'query{cases{countConfirmedCases,perDayConfirmed {value,date}}}';
+const query = 'query{cases{countDeaths,countRecoveries,countConfirmedCases,perDayConfirmed {value,date}}}';
 
 fetch('https://ncovph.com/graphql', {
     method: 'POST',
@@ -27,17 +27,20 @@ fetch('https://ncovph.com/graphql', {
 
 app.get("/", (req, res) => {
     let confirmedCasesCount =  JSON.parse(timeSeries).data.cases.countConfirmedCases;
-    console.log(confirmedCasesCount);
+    
+    let deathCount = JSON.parse(timeSeries).data.cases.countDeaths;
+
+    let recoveryCount = JSON.parse(timeSeries).data.cases.countRecoveries;
     
     let timeSeriesJSON = JSON.parse(timeSeries).data.cases.perDayConfirmed;
     for (let i = 0; i < timeSeriesJSON.length; i++) {
-    timeSeriesJSON[i]['y'] = timeSeriesJSON[i]['value'];
-    delete timeSeriesJSON[i]['value'];
-    timeSeriesJSON[i]['x'] = timeSeriesJSON[i]['date'];
-    delete timeSeriesJSON[i]['date'];
+        timeSeriesJSON[i]['y'] = timeSeriesJSON[i]['value'];
+        delete timeSeriesJSON[i]['value'];
+        timeSeriesJSON[i]['x'] = timeSeriesJSON[i]['date'];
+        delete timeSeriesJSON[i]['date'];
     }
 
-    res.render("index", {timeSeries: timeSeriesJSON, confirmedCasesCount: confirmedCasesCount});
+    res.render("index", {timeSeries: timeSeriesJSON, confirmedCasesCount: confirmedCasesCount, deathCount: deathCount, recoveryCount: recoveryCount});
 });
 
 app.route("/data")
