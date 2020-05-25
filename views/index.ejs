@@ -11,14 +11,17 @@
 
     <div class="dashboard-container">
         <div class="info-container">
-            <h1 class="info-header"></h1>
-            <h1 class="info-header">the Philippines has:</h1>
+            <h1 class="info-header"></i></h1>
+            <h1 class="info-header">the Philippines has:</i></h1>
+            <br>
+            <h1 class="confirmed-count"><%=confirmedCasesCount%><span class="info-header"> confirmed cases.</span></h1>
         </div>
-        <canvas id="myChart"></canvas>
+        <div style="width: 500px"><canvas id="myChart"></canvas></div>
+        
     </div>
     
     <script>
-        let timeSeries = '<%=timeSeries%>';
+        let timeSeries = '<%-JSON.stringify(timeSeries)%>';
     </script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script type="text/javascript" src="/js/date.js"></script>

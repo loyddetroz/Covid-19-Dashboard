@@ -1,4 +1,10 @@
-alert(timeSeries);
+yLabels = [];
+xLabels = []
+let timeSeriesJSON = JSON.parse(timeSeries);
+for (let i = 0; i < timeSeriesJSON.length; i++) {
+    yLabels.push(timeSeriesJSON[i]['y']);
+    xLabels.push(timeSeriesJSON[i]['x']);
+}
 
 var ctx = document.getElementById('myChart').getContext('2d');
 var chart = new Chart(ctx, {
@@ -7,11 +13,12 @@ var chart = new Chart(ctx, {
 
     // The data for our dataset
     data: {
+        labels: xLabels,
         datasets: [{
             label: 'My First dataset',
-            backgroundColor: 'rgb(255, 99, 132)',
+            // backgroundColor: 'rgb(255, 99, 132)',
             borderColor: 'rgb(255, 99, 132)',
-            data: [{value:10, date: '2020-03-19'}]
+            data: yLabels
         }]
     },
 
